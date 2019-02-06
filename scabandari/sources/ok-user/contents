@@ -1,0 +1,12 @@
+agetty-tty2
+agetty-tty3
+bluetooth
+dnsmasq
+docker
+gdm
+libvirtd
+NetworkManager
+pcscd
+sshd
+sssd
+syncthing

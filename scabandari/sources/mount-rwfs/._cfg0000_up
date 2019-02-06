@@ -1,0 +1,13 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting mount-rwfs
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: mount-rwfs" }
+
+# remount root as rw
+s6-mount -o remount,rw /
+
+# done mount-rwfs
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: mount-rwfs"
+

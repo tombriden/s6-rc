@@ -1,0 +1,13 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting mount-rwfs
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: mount-crypt" }
+
+# mount encrypted drives
+if { cryptsetup open /dev/disk/by-uuid/fc76d860-9efb-4b7f-917a-43f6c20582d0 data --key-file /etc/keyfiles/data.key }
+
+# done mount-rwfs
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: mount-crypt"
+

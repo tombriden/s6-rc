@@ -1,0 +1,4 @@
+#!/bin/execlineb -P
+
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longshot: udevd" }
+execl-cmdline -s { udevd }

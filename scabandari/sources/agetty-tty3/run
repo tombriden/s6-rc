@@ -1,0 +1,10 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting agetty-tty2
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: agetty-tty3" }
+
+# start agetty on tty2
+agetty tty3
+
