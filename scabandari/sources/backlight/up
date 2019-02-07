@@ -1,0 +1,5 @@
+#!/bin/execlineb -P
+
+redirfd -w 1 /dev/null
+pipeline { cat /var/lib/backlight/brightness }
+tee /sys/class/backlight/intel_backlight/brightness
