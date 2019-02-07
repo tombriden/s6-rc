@@ -1,6 +1,6 @@
 #!/bin/execlineb -P
 
-foreground { s6-echo -- "\033[35;1m===\033[0m Starting longshot: gdm" }
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: gdm" }
 foreground {
     if -n { ls -d /tmp/.X11-unix } foreground { mkdir /tmp/.X11-unix }
     foreground { chown gdm:gdm /tmp/.X11-unix } chmod 777 /tmp/.X11-unix

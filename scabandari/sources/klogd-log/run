@@ -1,5 +1,5 @@
 #!/bin/execlineb -P
 
-foreground { s6-echo -- "\033[35;1m===\033[0m Starting longshot: klogd" }
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: klogd" }
 exec -c
 s6-log t s1000000 n20 /var/log/klogd
