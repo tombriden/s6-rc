@@ -6,7 +6,8 @@ fdmove -c 2 1
 foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: mount-crypt" }
 
 # mount encrypted drives
-if { cryptsetup open /dev/disk/by-uuid/fc76d860-9efb-4b7f-917a-43f6c20582d0 data --key-file /etc/keyfiles/data.key }
+foreground { cryptsetup open /dev/disk/by-uuid/fc76d860-9efb-4b7f-917a-43f6c20582d0 data --key-file /etc/keyfiles/data.key }
+foreground { cryptsetup open /dev/disk/by-uuid/f6415b86-1099-4286-8a9d-8b4bea9a2e6e exherbo-b --key-file /etc/keyfiles/exherbo-b.key }
 
 # done mount-rwfs
 s6-echo -- "\033[35;1m===\033[0m Done oneshot: mount-crypt"
