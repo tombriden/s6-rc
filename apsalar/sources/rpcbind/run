@@ -1,0 +1,11 @@
+#!/bin/execlineb -P
+fdmove -c 2 1
+
+foreground {
+  if -n { test -d /run/rpcbind }
+  mkdir /run/rpcbind
+}
+
+exec -c 
+/usr/host/bin/rpcbind -f
+

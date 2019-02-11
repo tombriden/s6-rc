@@ -1,0 +1,14 @@
+agetty-tty1
+agetty-tty2
+agetty-tty3
+fwknopd
+hwclock
+mysqld
+nfs-utils
+nginx
+openldap
+php-fpm
+sshd
+sssd
+syncthing
+znc

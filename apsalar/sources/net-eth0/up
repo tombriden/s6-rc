@@ -1,0 +1,10 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: init-eth0" }
+
+foreground { ifconfig eth0 192.168.1.1 netmask 255.255.255.0 }
+if { route add default gw 192.168.1.2 eth0 }
+
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: init-eth0"

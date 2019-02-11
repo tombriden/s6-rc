@@ -1,0 +1,14 @@
+#!/bin/execlineb -P
+fdmove -c 2 1
+
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: openldap" }
+
+foreground {
+  foreground {
+    if -n { s6-test -d /run/openldap }
+    if { mkdir -p -m 0755 /run/openldap }
+    chown ldap:ldap /run/openldap
+  }
+}
+fdmove -c 2 1
+/usr/libexec/openldap/slapd -u ldap -g ldap -h 'ldaps:// ldap:// ldapi://%2frun%2fopenldap%2fslapd.sock'
