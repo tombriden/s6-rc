@@ -5,5 +5,7 @@ fdmove -c 2 1
 # starting mount-rwfs
 foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: undervolt" }
 
-undervolt --core -90 --cache -90
+if { /usr/host/bin/undervolt --core -90 --cache -90 --gpu -60 }
+
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: undervolt"
 
