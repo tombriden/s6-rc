@@ -1,0 +1,17 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting init-tmp
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: init-tmp" }
+
+# creating build folder needed by paludis
+foreground { s6-mkdir -p /var/tmp/paludis/build }
+# give it the right permission
+foreground { s6-chmod 773 /var/tmp/paludis/build }
+# and owner
+foreground { s6-envuidgid paludisbuild s6-chown -U /var/tmp/paludis/build }
+
+# done mount-tmp
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: init-tmp"
+

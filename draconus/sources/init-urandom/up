@@ -1,0 +1,14 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting init-urandom
+foreground { s6-echo --
+    "\033[35;1m===\033[0m Starting oneshot: init-urandom" }
+
+# seed randomness pool
+if { s6-fillurandompool }
+
+# done init-urandom
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: init-urandom"
+

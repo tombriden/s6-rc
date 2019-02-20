@@ -1,0 +1,13 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting hwclock
+foreground { s6-echo --
+    "\033[35;1m===\033[0m Starting oneshot: hwclock" }
+
+foreground { hwclock --hctosys }
+
+# done hwclock
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: hwclock"
+

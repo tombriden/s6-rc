@@ -1,0 +1,15 @@
+#!/bin/execlineb -P
+fdmove -c 2 1
+
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: dockerd" }
+
+foreground {
+	if -n { test -d /sys/fs/cgroup/devices }
+	mkdir /sys/fs/cgroup/devices
+}
+foreground {
+	if -n { mountpoint -q /sys/fs/cgroup/devices }
+	mount -wt cgroup -o rw,relatime,devices cgroup /sys/fs/cgroup/devices
+}
+
+/usr/x86_64-pc-linux-gnu/bin/dockerd
