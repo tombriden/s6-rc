@@ -1,1 +1,7 @@
 net-loop
+net-eth0
+
+iptables
+fwknopd
+ntpdate
+sshd

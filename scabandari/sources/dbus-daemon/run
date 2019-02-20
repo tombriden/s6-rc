@@ -1,0 +1,7 @@
+#!/bin/execlineb -P
+fdmove -c 2 1
+
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: dbus" }
+if -n { ls -d /run/dbus } if { mkdir /run/dbus }
+
+if { dbus-daemon --system --nofork --nopidfile }

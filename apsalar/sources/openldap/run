@@ -10,5 +10,4 @@ foreground {
     chown ldap:ldap /run/openldap
   }
 }
-fdmove -c 2 1
-/usr/libexec/openldap/slapd -u ldap -g ldap -h 'ldaps:// ldap:// ldapi://%2frun%2fopenldap%2fslapd.sock'
+/usr/libexec/openldap/slapd -d 0 -u ldap -g ldap -h "ldaps:// ldap:// ldapi://%2frun%2fopenldap%2fslapd.sock"

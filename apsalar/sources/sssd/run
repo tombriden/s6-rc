@@ -2,4 +2,4 @@
 fdmove -c 2 1
 
 foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: sssd" }
-/usr/host/bin/sssd -f -D
+/usr/host/bin/sssd -i --logger=files

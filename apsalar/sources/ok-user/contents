@@ -1,6 +1,6 @@
-agetty-tty1
 agetty-tty2
 agetty-tty3
+crond
 fwknopd
 hwclock
 mysqld
@@ -10,5 +10,4 @@ openldap
 php-fpm
 sshd
 sssd
-syncthing
 znc
