@@ -1,0 +1,21 @@
+#!/bin/execlineb -P
+fdmove -c 2 1
+
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: mysqld" }
+
+foreground {
+  foreground {
+    if -n { s6-test -d /run/mysqld }
+    if { mkdir -p -m 0755 /run/mysqld }
+    chown mysql:mysql /run/mysqld
+  }
+  foreground {
+    if -n { s6-test -d /var/lib/mysql }
+    if { mkdir -p -m 0700 /var/lib/mysql }
+    chown mysql:mysql /var/lib/mysql
+  }
+}
+fdmove -c 2 1
+s6-setuidgid mysql
+exec -c
+/usr/bin/mysqld --pid-file=/run/mysqld/mysqld.pid 
