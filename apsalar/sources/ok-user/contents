@@ -10,4 +10,5 @@ openldap
 php-fpm
 sshd
 sssd
+syncthing
 znc
