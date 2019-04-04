@@ -4,6 +4,7 @@ apsalar_connect
 crond
 docker
 hwclock
+ntpdate
 nfs-utils
 rsyncd
 sshd
