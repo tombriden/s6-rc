@@ -6,6 +6,7 @@ fdmove -c 2 1
 foreground { s6-echo --
     "\033[35;1m===\033[0m Starting oneshot: mount-cgroups" }
 
+if -n -x 0 { mountpoint -q /sys/fs/cgroup }
 if { mkdir -p -m 0755 /sys/fs/cgroup }
 if { s6-mount -wt cgroup2 -o rw,nosuid,nodev,noexec,nsdelegate cgroup2 /sys/fs/cgroup }
 redirfd -r 0 /proc/cgroups
