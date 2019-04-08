@@ -3,5 +3,4 @@ net-eth0
 
 iptables
 fwknopd
-ntpdate
 sshd

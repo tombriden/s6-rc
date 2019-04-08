@@ -1,2 +1,2 @@
 iptables
-ntpdate
+ntp

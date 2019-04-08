@@ -5,6 +5,7 @@ fwknopd
 hwclock
 mysqld
 nfs-utils
+ntpd
 nginx
 openldap
 php-fpm

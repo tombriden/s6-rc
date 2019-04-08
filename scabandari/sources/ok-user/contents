@@ -6,7 +6,7 @@ dnsmasq
 docker
 gdm
 libvirtd
-ntpdate
+ntpd
 pcscd
 sshd
 sssd
