@@ -1,0 +1,16 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting 00
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: 00" }
+
+# set hostname
+foreground { s6-hostname osseric }
+
+# set keymap
+foreground { loadkeys uk }
+
+# done 00
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: 00"
+

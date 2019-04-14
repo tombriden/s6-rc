@@ -1,0 +1,13 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting init-eth0
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: init-eth0" }
+
+# bring up eth0back interface
+if { ip link set eth0 up }
+
+# done init-eth0 up
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: init-eth0"
+

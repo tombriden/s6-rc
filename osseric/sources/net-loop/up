@@ -1,0 +1,13 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting init-loop
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: init-loop" }
+
+# bring up loopback interface
+if { ip link set lo up }
+
+# done init-loop up
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: init-loop"
+

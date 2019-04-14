@@ -1,0 +1,14 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting init-wlan0
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: init-wlan0" }
+
+# bring up wlan0back interface
+foreground { modprobe rtl8192cu }
+if { ip link set wlan0 up }
+
+# done init-wlan0 up
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: init-wlan0"
+

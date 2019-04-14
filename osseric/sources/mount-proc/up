@@ -1,0 +1,14 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+# starting mount-proc
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting oneshot: mount-proc" }
+
+# mount /proc
+if -n -x 0 { mountpoint -q /proc }
+if { s6-mount -wt proc proc /proc }
+
+# done mount-proc
+s6-echo -- "\033[35;1m===\033[0m Done oneshot: mount-proc"
+

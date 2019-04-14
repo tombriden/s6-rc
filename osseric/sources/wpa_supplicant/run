@@ -1,0 +1,8 @@
+#!/bin/execlineb -P
+
+fdmove -c 2 1
+
+foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: wpa_supplicant" }
+
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+

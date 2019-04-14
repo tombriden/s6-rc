@@ -1,0 +1,7 @@
+crond
+dhcpcd
+#ntpd
+sshd
+sssd
+#syncthing
+wpa_supplicant
