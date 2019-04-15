@@ -4,4 +4,5 @@ fdmove -c 2 1
 
 foreground { s6-echo -- "\033[35;1m===\033[0m Starting longrun: ntpd" }
 
+foreground { ntpdate ganoes.decompile.me.uk }
 ntpd -g -n

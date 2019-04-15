@@ -1,8 +1,8 @@
-agetty-tty2
-agetty-tty3
+#agetty-ttyS0
 crond
+elogind
 fwknopd
-hwclock
+#hwclock
 mysqld
 nfs-utils
 ntpd
